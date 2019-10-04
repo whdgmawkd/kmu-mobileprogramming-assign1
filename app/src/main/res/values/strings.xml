@@ -14,4 +14,5 @@ If you choose to use our Service, then you agree to the collection and use of in
     <string name="privacy_disagree">Disagree</string>
     <string name="label_privacy">Privacy Policy</string>
     <string name="action_submit">Submit</string>
+    <string name="error_username_empty">Enter Username</string>
 </resources>
