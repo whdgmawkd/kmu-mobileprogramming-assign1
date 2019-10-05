@@ -34,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         database = Room.databaseBuilder(this, AppDatabase.class, getResources().getString(R.string.db_name))
+                .allowMainThreadQueries()
                 .build();
 
         rgPrivacy = findViewById(R.id.radio_group_privacy);
