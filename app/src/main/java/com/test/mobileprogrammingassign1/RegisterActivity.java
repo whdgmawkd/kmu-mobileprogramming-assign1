@@ -59,6 +59,9 @@ public class RegisterActivity extends AppCompatActivity {
         bSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // empty filed(username or password)
+                if(!isCompleted())
+                    return;
                 // check userinfo
                 Item userInfo = new Item(tUsername.getText().toString(), tPassword.getText().toString(), tName.getText().toString(), tPhone.getText().toString(), tAddress.getText().toString());
                 Item checkInfo = database.getItemDAO().getItemByUsername(userInfo.getUsername());
@@ -77,9 +80,6 @@ public class RegisterActivity extends AppCompatActivity {
                     rgPrivacy.requestFocus();
                     return;
                 }
-                // empty filed(username or password)
-                if(!isCompleted())
-                    return;
                 // no issue. register user.
                 database.getItemDAO().insert(userInfo);
                 finish();
