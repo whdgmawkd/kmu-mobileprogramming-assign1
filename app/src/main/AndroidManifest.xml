@@ -10,8 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".RegisterActivity"
+            android:parentActivityName=".LoginActivity"
+            android:label="@string/title_activity_register">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity"/>
+        </activity>
+        <activity android:name=".LoginActivity"
+            android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
