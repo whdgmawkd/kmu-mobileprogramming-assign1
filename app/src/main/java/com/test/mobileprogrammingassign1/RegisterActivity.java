@@ -60,8 +60,10 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // empty filed(username or password)
-                if(!isCompleted())
+                if(!isCompleted()) {
+                    tUsername.requestFocus();
                     return;
+                }
                 // check userinfo
                 Item userInfo = new Item(tUsername.getText().toString(), tPassword.getText().toString(), tName.getText().toString(), tPhone.getText().toString(), tAddress.getText().toString());
                 Item checkInfo = database.getItemDAO().getItemByUsername(userInfo.getUsername());
