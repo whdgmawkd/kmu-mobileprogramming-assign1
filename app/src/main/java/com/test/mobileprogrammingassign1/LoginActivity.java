@@ -30,6 +30,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        setTitle(R.string.title_activity_login);
+
         database = Room.databaseBuilder(this, AppDatabase.class, getResources().getString(R.string.db_name))
                 .allowMainThreadQueries()
                 .build();
