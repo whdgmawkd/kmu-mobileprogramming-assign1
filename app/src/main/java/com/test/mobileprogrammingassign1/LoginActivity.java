@@ -74,6 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                     dialogLogin.show();
                 } else {
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
                 }
             }
         });
