@@ -1,8 +1,6 @@
 package com.test.mobileprogrammingassign1;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
-
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,6 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import com.test.mobileprogrammingassign1.models.Item;
 
@@ -40,16 +42,34 @@ public class LoginActivity extends AppCompatActivity {
         bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(TextUtils.isEmpty(username.getText())){
-                    // empty field
+                // check filed
+                boolean isError = false;
+                if (TextUtils.isEmpty(username.getText())) {
+                    // empty username field
                     username.setError(getResources().getString(R.string.error_username_empty));
-                    return;
+                    isError = true;
                 }
+                if (TextUtils.isEmpty(password.getText())) {
+                    // empty password field
+                    password.setError(getResources().getString(R.string.error_password_empty));
+                    isError = true;
+                }
+                // nothing to do.
+                if (isError)
+                    return;
+
                 // query info
-                Item userinfo = database.getItemDAO().getItemByLoginInfo(username.getText().toString(), password.getText().toString());
-                if(userinfo == null){
-                    // TODO: 10/4/19 Show Error dialog
-                    Toast.makeText(getApplicationContext(),"Wrong Username or Password!", Toast.LENGTH_LONG).show();
+                Item userInfo = database.getItemDAO().getItemByLoginInfo(username.getText().toString(), password.getText().toString());
+                if (userInfo == null) {
+                    AlertDialog.Builder dialogLoginBuilder = new AlertDialog.Builder(getApplicationContext());
+                    dialogLoginBuilder.setTitle(R.string.dialog_title_login_incorrent)
+                            .setMessage(R.string.error_login_incorrect)
+                            .setPositiveButton(R.string.action_ok, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.dismiss();
+                                }
+                            });
                 } else {
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 }
