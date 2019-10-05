@@ -58,7 +58,7 @@
             android:inputType="textPostalAddress" />
 
         <TextView
-            android:id="@+id/label_license"
+            android:id="@+id/label_privacy"
             style="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,11 +66,19 @@
             android:text="@string/label_privacy" />
 
         <TextView
-            android:id="@+id/register_terms"
+            android:id="@+id/register_privacy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="@string/privacy_content" />
+
+        <TextView
+            android:id="@+id/privacy_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:visibility="gone"
+            android:textColor="@color/colorAccent"/>
 
         <RadioGroup
             android:id="@+id/radio_group_privacy"

@@ -24,6 +24,9 @@ public interface ItemDAO {
     @Query("SELECT * FROM items WHERE username = :username and password =:password LIMIT 1")
     public Item getItemByLoginInfo(String username, String password);
 
+    @Query("SELECT * FROM items WHERE username = :username LIMIT 1")
+    public Item getItemByUsername(String username);
+
     @Query("SELECT * FROM items")
     public List<Item> getItems();
 }

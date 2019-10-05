@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        database = Room.databaseBuilder(this, AppDatabase.class, "mydb")
+        database = Room.databaseBuilder(this, AppDatabase.class, getResources().getString(R.string.db_name))
                 .build();
 
         username = findViewById(R.id.login_username);

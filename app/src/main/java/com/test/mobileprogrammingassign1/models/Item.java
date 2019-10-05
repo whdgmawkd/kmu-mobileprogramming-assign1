@@ -13,6 +13,14 @@ public class Item {
     private String phone;
     private String address;
 
+    public Item(@NonNull String username, String password, String name, String phone, String address){
+        setUsername(username);
+        setPassword(password);
+        setName(name);
+        setPhone(phone);
+        setAddress(address);
+    }
+
     public String getAddress() {
         return address;
     }
