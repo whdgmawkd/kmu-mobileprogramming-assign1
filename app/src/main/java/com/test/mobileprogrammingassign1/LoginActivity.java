@@ -62,15 +62,16 @@ public class LoginActivity extends AppCompatActivity {
                 // query info
                 Item userInfo = database.getItemDAO().getItemByLoginInfo(username.getText().toString(), password.getText().toString());
                 if (userInfo == null) {
-                    AlertDialog.Builder dialogLoginBuilder = new AlertDialog.Builder(getApplicationContext());
-                    dialogLoginBuilder.setTitle(R.string.dialog_title_login_incorrent)
+                    AlertDialog.Builder dialogLoginBuilder = new AlertDialog.Builder(LoginActivity.this, R.style.Theme_AppCompat_Light_Dialog);
+                    AlertDialog dialogLogin = dialogLoginBuilder.setTitle(R.string.dialog_title_login_incorrent)
                             .setMessage(R.string.error_login_incorrect)
                             .setPositiveButton(R.string.action_ok, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     dialogInterface.dismiss();
                                 }
-                            });
+                            }).create();
+                    dialogLogin.show();
                 } else {
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 }
