@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -76,11 +77,27 @@ public class RegisterActivity extends AppCompatActivity {
                     rgPrivacy.requestFocus();
                     return;
                 }
+                // empty filed(username or password)
+                if(!isCompleted())
+                    return;
                 // no issue. register user.
                 database.getItemDAO().insert(userInfo);
                 finish();
             }
         });
+    }
+
+    private boolean isCompleted() {
+        boolean isComplete = true;
+        if(TextUtils.isEmpty(tUsername.getText())){
+            isComplete=false;
+            tUsername.setError(getResources().getString(R.string.error_username_empty));
+        }
+        if(TextUtils.isEmpty(tPassword.getText())){
+            isComplete=false;
+            tPassword.setError(getResources().getString(R.string.error_password_empty));
+        }
+        return isComplete;
     }
 
     @Override
