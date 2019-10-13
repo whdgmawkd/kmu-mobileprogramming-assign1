@@ -23,63 +23,63 @@
             android:id="@+id/board0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/board_empty"
+            android:background="@drawable/board_border"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"/>
         <ImageButton
             android:id="@+id/board1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/board_empty"
+            android:background="@drawable/board_border"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"/>
         <ImageButton
             android:id="@+id/board2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/board_empty"
+            android:background="@drawable/board_border"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"/>
         <ImageButton
             android:id="@+id/board3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/board_empty"
+            android:background="@drawable/board_border"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"/>
         <ImageButton
             android:id="@+id/board4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/board_empty"
+            android:background="@drawable/board_border"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"/>
         <ImageButton
             android:id="@+id/board5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/board_empty"
+            android:background="@drawable/board_border"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"/>
         <ImageButton
             android:id="@+id/board6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/board_empty"
+            android:background="@drawable/board_border"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"/>
         <ImageButton
             android:id="@+id/board7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/board_empty"
+            android:background="@drawable/board_border"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"/>
         <ImageButton
             android:id="@+id/board8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/board_empty"
+            android:background="@drawable/board_border"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"/>
     </GridLayout>
