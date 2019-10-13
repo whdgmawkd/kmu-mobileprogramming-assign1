@@ -2,6 +2,8 @@
 
 ## 20181619 박종흠
 
+## 깃허브 주소 : https://github.com/whdgmawkd/kmu-mobileprogramming-assign1
+
 # 구현 내용
 
 ## LoginActivity
