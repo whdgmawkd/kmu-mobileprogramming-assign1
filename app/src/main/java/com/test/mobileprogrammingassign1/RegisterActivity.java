@@ -99,6 +99,10 @@ public class RegisterActivity extends AppCompatActivity {
             isComplete=false;
             tPassword.setError(getResources().getString(R.string.error_password_empty));
         }
+        if(tPassword.getText().length() < 6){
+            isComplete=false;
+            tPassword.setError(getResources().getString(R.string.error_password_short));
+        }
         return isComplete;
     }
 
